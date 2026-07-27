@@ -55,7 +55,7 @@ demons.forEach(demon => {
 
 
    card.addEventListener("click", () => {
-
+console.log("Society kattintás működik");
     const popup = document.getElementById("popup");
 
     popup.innerHTML = `
