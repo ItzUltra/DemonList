@@ -222,7 +222,7 @@ demons.forEach(demon => {
 
     mainList.appendChild(card);
 
-};
+},
 
 
 
