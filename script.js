@@ -258,7 +258,8 @@ function closePopup() {
         "cuber",
         "kurewa",
         "crowiley",
-        "Kevellium"
+        "Kevellium",
+        " Cairox"
     ],
 
     verifier: "Zoink",
