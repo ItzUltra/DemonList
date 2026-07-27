@@ -1,4 +1,5 @@
 const demons = [
+    
     {
         rank: 1,
         name: "Society",
@@ -233,7 +234,6 @@ function closePopup() {
     popup.classList.add("hidden");
 
 },
-               
 {
     rank: 2,
     name: "Thinking Space II",
