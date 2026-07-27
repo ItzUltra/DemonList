@@ -105,10 +105,31 @@ demons.forEach(demon => {
 
 <div class="records">
 
-${
-    [...demon.records]
-    .sort((a, b) => b.percent - a.percent)
-    .map((record, index) => `
+ `${
+    demon.records
+    ? demon.records
+        .sort((a, b) => b.percent - a.percent)
+        .map((record, index) => `
+
+        <div class="record">
+
+            <h4>${index + 1}. ${record.player}</h4>
+
+            <p><b>Type:</b> ${record.type}</p>
+
+            <p><b>Progress:</b> ${record.percent}%</p>
+
+            <p><b>Attempts:</b> ${record.attempts}</p>
+
+            <a href="${record.video}" target="_blank">
+                Watch Video
+            </a>
+
+        </div>
+
+        `).join("")
+    : "No records yet"
+}
 
         <div class="record">
 
