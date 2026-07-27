@@ -324,4 +324,4 @@ function closePopup() {
     image: ""
 }
          
-       
+ ];      
