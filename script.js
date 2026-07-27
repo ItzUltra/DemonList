@@ -59,6 +59,7 @@ const demons = [
 
 const mainList = document.getElementById("main-list");
 
+console.log(demons;
 
 demons.forEach(demon => {
 
@@ -310,7 +311,7 @@ function closePopup() {
             player: "NeterMind",
             percent: 89,
             attempts: "Unknown",
-            video: "https://youtube.com/watch?v=uqHsCNJxqmY"
+            video: "https://www.youtube.com/watch?v=uqHsCNJxqmY"
         },
 
         {
