@@ -222,7 +222,7 @@ demons.forEach(demon => {
 
     mainList.appendChild(card);
 
-},
+};
 
 
 
@@ -233,6 +233,7 @@ function closePopup() {
     popup.classList.add("hidden");
 
 },
+               
 {
     rank: 2,
     name: "Thinking Space II",
