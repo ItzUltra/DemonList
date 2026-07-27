@@ -202,3 +202,39 @@ h2 {
     cursor: pointer;
 
 }
+.records {
+    margin-top: 20px;
+}
+
+
+.record {
+
+    background: #222;
+
+    padding: 15px;
+
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+
+    border-left: 4px solid #e53935;
+
+}
+
+
+.record h4 {
+
+    color: #ff5555;
+
+    margin-bottom: 10px;
+
+}
+
+
+.record a {
+
+    color: #ff7777;
+
+    text-decoration: none;
+
+}
