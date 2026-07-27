@@ -125,3 +125,80 @@ h2 {
 .hidden {
     display: none !important;
 }
+.popup-content {
+
+    background: #1c1c1c;
+
+    width: 90%;
+    max-width: 600px;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    border: 2px solid #e53935;
+
+    max-height: 80vh;
+
+    overflow-y: auto;
+
+}
+
+
+.popup-content h2 {
+
+    color: #e53935;
+
+    margin-bottom: 20px;
+
+}
+
+
+.popup-content p {
+
+    margin-bottom: 10px;
+
+}
+
+
+.skills span {
+
+    display: inline-block;
+
+    background: #333;
+
+    padding: 6px 12px;
+
+    margin: 5px;
+
+    border-radius: 20px;
+
+    color: #ff6666;
+
+}
+
+
+.popup-content a {
+
+    color: #ff5555;
+
+}
+
+
+.popup-content button {
+
+    margin-top: 20px;
+
+    padding: 10px 20px;
+
+    background: #e53935;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
