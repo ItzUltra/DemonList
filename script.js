@@ -54,7 +54,7 @@ demons.forEach(demon => {
     `;
 
 
-    mainList.appendChild(card);card.addEventListener("click", () => {
+   card.addEventListener("click", () => {
 
     const popup = document.getElementById("popup");
 
@@ -109,11 +109,16 @@ demons.forEach(demon => {
         </div>
     `;
 
-    popup.classList.remove("hidden");
+   popup.classList.remove("hidden");
 
 });
 
+
+    mainList.appendChild(card);
+
 });
+
+
 function closePopup() {
 
     const popup = document.getElementById("popup");
