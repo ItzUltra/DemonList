@@ -1,5 +1,5 @@
 const demons = [
-    
+
     {
         rank: 1,
         name: "Society",
@@ -16,11 +16,17 @@ const demons = [
             "UnderCookedWa"
         ],
 
+        verifier: "wPopOff",
+
         id: "127323087",
+
         length: "2:15",
+
         objects: "168400",
 
         points: 2000,
+
+        minimumProgress: "",
 
         enjoyment: "N/A",
 
@@ -36,30 +42,115 @@ const demons = [
         verification:
         "https://www.youtube.com/watch?v=3CoEaH1CM7o",
 
-        verifier: "wPopOff",
-
         records: [
+
             {
                 player: "Zoink",
                 percent: 100,
                 attempts: "Unknown",
-                video:
-                "https://www.youtube.com/watch?v=PU1MhluMrEI",
-
+                video: "https://www.youtube.com/watch?v=PU1MhluMrEI",
                 type: "1st Victor"
             }
+
         ],
 
         image: ""
+
+    },
+
+    {
+        rank: 2,
+        name: "Thinking Space II",
+
+        creators: [
+            "Kugelblitz",
+            "Jawis",
+            "Hyperbola",
+            "CairoX",
+            "Realvet",
+            "UFWM",
+            "Rin04",
+            "maxmur",
+            "DiamondSkull",
+            "Meox",
+            "NineDice",
+            "RealNyanCat",
+            "GamerKnight750",
+            "ThunderDarkness",
+            "ErinaLaSacarina",
+            "Adrone",
+            "HaydenDom",
+            "cuber",
+            "kurewa",
+            "crowiley",
+            "Kevellium"
+        ],
+
+        verifier: "Zoink",
+
+        id: "119544028",
+
+        length: "1:10",
+
+        objects: "139593",
+
+        points: 1992,
+
+        minimumProgress: "65%",
+
+        enjoyment: "8/10",
+
+        skillset: [
+            "Timings",
+            "Spam"
+        ],
+
+        showcase:
+        "https://www.youtube.com/watch?v=fnz9ddZjIGc",
+
+        verification:
+        "https://www.youtube.com/watch?v=CELNmHwln_c",
+
+        records: [
+
+            {
+                player: "wPopOff",
+                percent: 100,
+                attempts: "Unknown",
+                video: "https://www.youtube.com/watch?v=hJHiGeuahTI",
+                type: "1st Victor"
+            },
+
+            {
+                player: "Trick",
+                percent: 100,
+                attempts: "Unknown",
+                video: "https://www.youtube.com/watch?v=HuUSRqbd6Ck",
+                type: "2nd Victor"
+            },
+
+            {
+                player: "NeterMind",
+                percent: 89,
+                attempts: "Unknown",
+                video: "https://www.youtube.com/watch?v=uqHsCNJxqmY"
+            },
+
+            {
+                player: "A6",
+                percent: 87,
+                attempts: "Unknown",
+                video: "https://www.youtube.com/watch?v=-ATaCVjkvT0"
+            }
+
+        ],
+
+        image: ""
+
     }
+
 ];
-
-
-// Lista létrehozása
-
 const mainList = document.getElementById("main-list");
-
-console.log(demons;
 
 demons.forEach(demon => {
 
@@ -67,9 +158,7 @@ demons.forEach(demon => {
 
     card.className = "demon";
 
-
     card.innerHTML = `
-
         <div class="rank">
             #${demon.rank}
         </div>
@@ -81,14 +170,11 @@ demons.forEach(demon => {
         <div class="name">
             ${demon.name}
         </div>
-
     `;
-
 
     card.addEventListener("click", () => {
 
         const popup = document.getElementById("popup");
-
 
         popup.innerHTML = `
 
@@ -96,46 +182,45 @@ demons.forEach(demon => {
 
             <h2>${demon.name}</h2>
 
-
             <p><b>Position:</b> #${demon.rank}</p>
-
 
             <p><b>Creators:</b></p>
 
             <p>
-            ${demon.creators.join(", ")}
+                ${demon.creators.join(", ")}
             </p>
-
 
             <p>
-            <b>Level ID:</b> ${demon.id}
+                <b>Verifier:</b> ${demon.verifier}
             </p>
-
 
             <p>
-            <b>Length:</b> ${demon.length}
+                <b>Level ID:</b> ${demon.id}
             </p>
-
 
             <p>
-            <b>Object Count:</b> ${demon.objects}
+                <b>Length:</b> ${demon.length}
             </p>
-
 
             <p>
-            <b>Points:</b> ${demon.points}
+                <b>Object Count:</b> ${demon.objects}
             </p>
-
 
             <p>
-            <b>Enjoyment:</b> ${demon.enjoyment}
+                <b>Points:</b> ${demon.points}
             </p>
 
+            ${
+                demon.minimumProgress
+                ?
+                `<p><b>Minimum Progress:</b> ${demon.minimumProgress}</p>`
+                :
+                ""
+            }
 
             <p>
-            <b>Verifier:</b> ${demon.verifier}
+                <b>Enjoyment:</b> ${demon.enjoyment}
             </p>
-
 
             <p><b>Skillset:</b></p>
 
@@ -143,90 +228,90 @@ demons.forEach(demon => {
 
                 ${
                     demon.skillset.map(skill =>
-                    `<span>${skill}</span>`
+                        `<span>${skill}</span>`
                     ).join("")
                 }
 
             </div>
 
+            <br>
 
             <p>
                 <b>Showcase:</b>
-
                 <a href="${demon.showcase}" target="_blank">
                     Watch
                 </a>
             </p>
 
-
             <p>
                 <b>Verification:</b>
-
                 <a href="${demon.verification}" target="_blank">
                     Watch
                 </a>
             </p>
 
-
-
             <h3>Records</h3>
 
-
             ${
-                demon.records
-                .sort((a,b) => b.percent - a.percent)
-                .map((record,index) => `
+                [...demon.records]
+                .sort((a, b) => b.percent - a.percent)
+                .map((record, index) => `
 
-                <div class="record">
+                    <div class="record">
 
-                    <h4>
-                    ${index + 1}. ${record.player}
-                    </h4>
+                        <h4>
+                            ${index + 1}. ${record.player}
+                        </h4>
 
-                    <p>
-                    <b>Type:</b> ${record.type}
-                    </p>
+                        ${
+                            record.type
+                            ?
+                            `<p><b>${record.type}</b></p>`
+                            :
+                            ""
+                        }
 
-                    <p>
-                    <b>Progress:</b> ${record.percent}%
-                    </p>
+                        <p>
+                            <b>Progress:</b>
+                            ${record.percent}%
+                        </p>
 
-                    <p>
-                    <b>Attempts:</b> ${record.attempts}
-                    </p>
+                        <p>
+                            <b>Attempts:</b>
+                            ${record.attempts}
+                        </p>
 
-                    <a href="${record.video}" target="_blank">
-                    Watch Video
-                    </a>
+                        ${
+                            record.video
+                            ?
+                            `<a href="${record.video}" target="_blank">
+                                Watch Video
+                            </a>`
+                            :
+                            ""
+                        }
 
-                </div>
+                    </div>
 
-                `)
-                .join("")
+                `).join("")
             }
 
-
+            <br>
 
             <button onclick="closePopup()">
                 Close
             </button>
 
-
         </div>
-
         `;
-
 
         popup.classList.remove("hidden");
 
     });
 
-
     mainList.appendChild(card);
 
-};
-
-
+});
 
 function closePopup() {
 
@@ -234,96 +319,4 @@ function closePopup() {
 
     popup.classList.add("hidden");
 
-},
-{
-    rank: 2,
-    name: "Thinking Space II",
-
-    creators: [
-        "Kugelblitz",
-        "Jawis",
-        "Hyperbola",
-        "CairoX",
-        "Realvet",
-        "UFWM",
-        "Rin04",
-        "maxmur",
-        "DiamondSkull",
-        "Meox",
-        "NineDice",
-        "RealNyanCat",
-        "GamerKnight750",
-        "ThunderDarkness",
-        "ErinaLaSacarina",
-        "Adrone",
-        "HaydenDom",
-        "cuber",
-        "kurewa",
-        "crowiley",
-        "Kevellium",
-        " Cairox"
-    ],
-
-    verifier: "Zoink",
-
-    id: "119544028",
-
-    length: "1:10",
-
-    objects: "139593",
-
-    points: 1992,
-
-    minimumProgress: "65%",
-
-    enjoyment: "8/10",
-
-    skillset: [
-        "Timings",
-        "Spam"
-    ],
-
-    showcase:
-    "https://www.youtube.com/watch?v=fnz9ddZjIGc",
-
-    verification:
-    "https://www.youtube.com/watch?v=CELNmHwln_c",
-
-
-    records: [
-        {
-            player: "wPopOff",
-            percent: 100,
-            attempts: "Unknown",
-            video: "https://www.youtube.com/watch?v=hJHiGeuahTI",
-            type: "1st Victor"
-        },
-
-        {
-            player: "Trick",
-            percent: 100,
-            attempts: "Unknown",
-            video: "https://www.youtube.com/watch?v=HuUSRqbd6Ck",
-            type: "2nd Victor"
-        },
-
-        {
-            player: "NeterMind",
-            percent: 89,
-            attempts: "Unknown",
-            video: "https://www.youtube.com/watch?v=uqHsCNJxqmY"
-        },
-
-        {
-            player: "A6",
-            percent: 87,
-            attempts: "Unknown",
-            video: "https://www.youtube.com/watch?v=-ATaCVjkvT0"
-        }
-    ],
-
-
-    image: ""
 }
-         
- ];      
