@@ -305,3 +305,4 @@ function closePopup() {
     popup.classList.add("hidden");
 
 }
+];
