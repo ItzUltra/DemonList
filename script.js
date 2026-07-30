@@ -121,4 +121,20 @@ card.addEventListener("click", () => {
 
     popup.classList.add("hidden");
 
-}    
+   popup.classList.remove("hidden");
+
+});
+
+
+    mainList.appendChild(card);
+
+});
+
+
+function closePopup() {
+
+    const popup = document.getElementById("popup");
+
+    popup.classList.add("hidden");
+
+}   
